@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌍 42-Night Europe Trip — Sep 1 to Oct 13, 2026</title>
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c9a84c;
+      --gold-light: #f0d98a;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --text: #2d2d2d;
+      --muted: #6b7280;
+      --border: #e5e0d5;
+      --green: #2d7a4f;
+      --green-light: #ecf7f1;
+      --red: #c0392b;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+      --purple: #7c3aed;
+      --purple-light: #f5f3ff;
+      --shadow: 0 2px 16px rgba(26,39,68,0.10);
+      --shadow-lg: 0 8px 40px rgba(26,39,68,0.15);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #1a2744 0%, #243354 50%, #1a3a5c 100%); color: white; padding: 72px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-emoji { font-size: 56px; display: block; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .hero-subtitle { font-size: clamp(15px, 2.5vw, 20px); color: rgba(255,255,255,0.80); margin-bottom: 32px; }
+    .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .hero-pill { background: rgba(201,168,76,0.18); border: 1px solid rgba(201,168,76,0.45); color: var(--gold-light); padding: 6px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+
+    /* NAV */
+    .nav-wrap { position: sticky; top: 0; z-index: 100; background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+    .nav { display: flex; overflow-x: auto; scrollbar-width: none; max-width: 1200px; margin: 0 auto; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav-btn { flex-shrink: 0; background: none; border: none; color: rgba(255,255,255,0.65); padding: 14px 20px; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; letter-spacing: 0.3px; }
+    .nav-btn:hover { color: white; background: rgba(255,255,255,0.05); }
+    .nav-btn.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+    /* MAIN */
+    main { max-width: 1200px; margin: 0 auto; padding: 32px 20px 80px; }
+    .section { display: none; animation: fadeIn 0.3s ease; }
+    .section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .section-header { margin-bottom: 28px; }
+    .section-title { font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .section-desc { color: var(--muted); font-size: 15px; }
+
+    /* ITINERARY */
+    .itinerary-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .filter-btn { background: white; border: 1.5px solid var(--border); color: var(--text); padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--navy); border-color: var(--navy); color: white; }
+    .day-list { display: flex; flex-direction: column; gap: 12px; }
+    .day-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); display: grid; grid-template-columns: 64px 1fr 150px; overflow: hidden; transition: box-shadow 0.2s; }
+    .day-card:hover { box-shadow: var(--shadow-lg); }
+    .day-photo { overflow: hidden; position: relative; min-height: 120px; background: #e8e3d8; }
+    .day-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .day-card:hover .day-photo img { transform: scale(1.06); }
+    .day-photo-credit { position: absolute; bottom: 4px; right: 5px; font-size: 9px; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.35); padding: 1px 5px; border-radius: 3px; letter-spacing: 0.2px; }
+    @media (max-width: 600px) { .day-card { grid-template-columns: 52px 1fr; } .day-photo { display: none; } }
+    .day-num { background: var(--navy); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 8px; text-align: center; }
+    .day-num-big { font-size: 22px; font-weight: 800; line-height: 1; }
+    .day-num-label { font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .day-body { padding: 14px 18px; }
+    .day-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+    .day-date { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+    .day-city-badge { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: white; }
+    .day-plan { font-size: 14.5px; color: var(--text); line-height: 1.55; margin-bottom: 6px; }
+    .day-gem { font-size: 13px; color: var(--purple); background: var(--purple-light); padding: 5px 10px; border-radius: 6px; display: flex; align-items: flex-start; gap: 6px; }
+    .day-gem::before { content: '✨'; flex-shrink: 0; }
+    .day-tag { font-size: 10.5px; font-weight: 700; padding: 2px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+    .tag-arrive { background: #dbeafe; color: #1e40af; }
+    .tag-travel { background: #fef3c7; color: #92400e; }
+    .tag-hike { background: #d1fae5; color: #065f46; }
+    .tag-daytrip { background: #e0e7ff; color: #3730a3; }
+    .tag-marquee { background: #fde2e4; color: #9d174d; }
+    .tag-depart { background: #1a2744; color: #f0d98a; }
+    .day-logistics { font-size: 13px; color: var(--navy); background: #eef3fb; border-left: 3px solid var(--blue); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-bottom: 10px; line-height: 1.5; }
+    .day-logistics strong { color: var(--blue); }
+    .day-blocks { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+    .day-block { display: grid; grid-template-columns: 74px 1fr; gap: 10px; align-items: start; }
+    .block-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); padding-top: 2px; }
+    .block-text { font-size: 14px; color: var(--text); line-height: 1.5; }
+    .block-text strong { color: var(--navy); font-weight: 700; }
+    .cost { color: var(--green); font-weight: 700; white-space: nowrap; }
+    .day-tips { display: flex; flex-direction: column; gap: 6px; }
+    .day-eat { font-size: 13px; color: #8a6411; background: #fdf6e3; padding: 5px 10px; border-radius: 6px; display: flex; align-items: flex-start; gap: 6px; }
+    .day-eat::before { content: '🍴'; flex-shrink: 0; }
+    @media (max-width: 600px) { .day-block { grid-template-columns: 1fr; gap: 1px; } .block-label { padding-top: 0; } }
+    .city-amsterdam { background: #e85d04; }
+    .city-haarlem { background: #f77f00; }
+    .city-bruges { background: #7b2d8b; }
+    .city-interlaken { background: #1d6fa4; }
+    .city-grindelwald { background: #0b4f6c; }
+    .city-annecy { background: #2d6a4f; }
+    .city-lyon { background: #c1121f; }
+    .city-florence { background: #9c6b00; }
+    .city-cinque { background: #1b7a4e; }
+    .city-bolzano { background: #6a3b2e; }
+    .city-garda { background: #0077a3; }
+    .city-verona { background: #a3123b; }
+    .city-nice { background: #d81159; }
+
+    /* ── BUDGET (interactive) ── */
+    .budget-total-banner { background: linear-gradient(135deg, var(--navy), #243354); color: white; border-radius: var(--radius); padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
+    .budget-total-label { font-size: 15px; opacity: 0.8; margin-bottom: 4px; }
+    .budget-total-amount { font-size: 44px; font-weight: 800; color: var(--gold-light); }
+    .budget-total-note { font-size: 13px; opacity: 0.65; }
+    .budget-side-totals { display: flex; flex-direction: column; gap: 8px; text-align: right; }
+    .budget-side-totals span { color: rgba(255,255,255,0.6); font-size: 13px; }
+    .budget-side-totals strong { color: var(--gold-light); font-size: 20px; margin-left: 8px; }
+    .budget-side-totals strong.prepaid-val { color: #6ee7b7; }
+    .budget-side-totals strong.remaining-val { color: #fca5a5; }
+    .paid-checkbox { width: 18px; height: 18px; cursor: pointer; accent-color: var(--green); }
+    .col-paid { width: 60px; }
+    .oneoff-row-paid { background: #f4faf6; }
+
+    .budget-grid { display: flex; flex-direction: column; gap: 24px; }
+
+    .budget-table-wrap { background: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .budget-table-scroll { overflow-x: auto; border-radius: 0 0 var(--radius) var(--radius); }
+    .budget-table-header { background: var(--navy); color: white; font-weight: 700; font-size: 14px; padding: 12px 18px; letter-spacing: 0.5px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; border-radius: var(--radius) var(--radius) 0 0; }
+    .add-row-btn { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 6px; cursor: pointer; transition: background 0.15s; }
+    .add-row-btn:hover { background: rgba(255,255,255,0.25); }
+
+    .budget-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .budget-table th { background: #f7f5f0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 700; padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    .budget-table th:first-child { text-align: left; }
+    .budget-table td { padding: 6px 10px; font-size: 13.5px; border-bottom: 1px solid #f0ece4; vertical-align: middle; }
+    .budget-table tr:last-child td { border-bottom: none; }
+    .budget-table tr:hover td { background: #faf8f3; }
+    .budget-table .total-row td { font-weight: 800; background: #f0ece4 !important; color: var(--navy); border-top: 2px solid var(--border); }
+    .num { text-align: right; font-weight: 600; color: var(--navy); font-variant-numeric: tabular-nums; }
+    .col-city { width: 22%; }
+    .col-num { width: 13%; }
+    .col-notes { width: 40%; }
+    .col-del { width: 32px; }
+
+    /* input cells */
+    .num-input { width: 100%; border: none; background: transparent; font-size: 13.5px; font-weight: 600; color: var(--navy); text-align: right; padding: 3px 4px; border-radius: 4px; font-variant-numeric: tabular-nums; cursor: text; transition: background 0.15s, outline 0.15s; outline: 2px solid transparent; font-family: inherit; }
+    .num-input:hover { background: #fef9ec; outline: 2px solid #f0d98a; }
+    .num-input:focus { background: #fffbf0; outline: 2px solid var(--gold); }
+    .text-input { width: 100%; border: none; background: transparent; font-size: 13px; color: var(--text); padding: 3px 4px; border-radius: 4px; cursor: text; transition: background 0.15s; outline: 2px solid transparent; font-family: inherit; }
+    .text-input:hover { background: #fef9ec; outline: 2px solid #f0d98a; }
+    .text-input:focus { background: #fffbf0; outline: 2px solid var(--gold); }
+    .notes-input { font-size: 12px; color: var(--muted); }
+    .row-total { text-align: right; font-weight: 700; color: var(--navy); font-size: 13.5px; }
+    .delete-row-btn { background: none; border: none; color: #ccc; cursor: pointer; font-size: 14px; padding: 2px 4px; border-radius: 4px; transition: color 0.15s, background 0.15s; }
+    .delete-row-btn:hover { color: var(--red); background: #fee2e2; }
+    .accom-new-pill { font-size: 10.5px; font-weight: 700; color: #065f46; background: #d1fae5; padding: 2px 8px; border-radius: 999px; margin-left: 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+    .accom-host { font-size: 12.5px; color: var(--text); margin-top: 4px; }
+    .accom-times { font-size: 11.5px; color: var(--muted); margin-top: 2px; margin-bottom: 6px; }
+
+    /* ── COMMUTE ── */
+    .commute-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 14px; overflow: hidden; border-left: 4px solid var(--border); }
+    .commute-card.is-booked { border-left-color: var(--green); }
+    .commute-card.is-unbooked { border-left-color: var(--red); }
+    .commute-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; flex-wrap: wrap; background: #faf8f3; border-bottom: 1px solid var(--border); }
+    .commute-route { font-size: 16px; font-weight: 800; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+    .commute-date { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+    .commute-total-time { font-size: 12px; font-weight: 700; color: var(--blue); background: #eef3fb; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+    .commute-total-time.is-estimate { color: var(--muted); background: #f0ece4; font-weight: 600; font-style: italic; }
+    .commute-status { font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; }
+    .status-booked { background: #d1fae5; color: #065f46; }
+    .status-unbooked { background: #fee2e2; color: #991b1b; }
+    .commute-body { padding: 14px 20px; }
+    .commute-leg { display: grid; grid-template-columns: 90px 1fr 100px; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px dashed var(--border); font-size: 13.5px; }
+    .commute-leg:last-child { border-bottom: none; }
+    .commute-leg-time { font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+    .commute-leg-route { color: var(--text); }
+    .commute-leg-route strong { color: var(--navy); }
+    .commute-leg-meta { font-size: 11.5px; color: var(--muted); text-align: right; }
+    .commute-leg-mode { display: inline-block; font-size: 10.5px; font-weight: 700; color: var(--blue); background: #eef3fb; padding: 1px 8px; border-radius: 6px; margin-right: 6px; }
+    .commute-empty { font-size: 13.5px; color: var(--muted); font-style: italic; padding: 6px 0; }
+    .commute-summary-bar { background: linear-gradient(135deg, var(--navy), #243354); color: white; border-radius: var(--radius); padding: 20px 28px; display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 22px; }
+    .commute-summary-item .num { font-size: 26px; font-weight: 800; }
+    .commute-summary-item .lbl { font-size: 12.5px; opacity: 0.75; }
+    .commute-summary-item.total .num { color: #d6e22c; }
+    .commute-summary-item.booked .num { color: #6ee7b7; }
+    .commute-summary-item.unbooked .num { color: #fca5a5; }
+    .edit-hint { font-size: 12px; color: var(--muted); padding: 8px 12px; background: #faf8f3; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 6px; }
+
+    /* VISA (interactive) */
+    /* ACCOMMODATION */
+    .accom-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
+    .accom-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+    .accom-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .accom-card-header { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); }
+    .accom-city-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .accom-city-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--muted); }
+    .accom-nights-pill { font-size: 12px; font-weight: 700; padding: 2px 10px; background: var(--navy); color: white; border-radius: 999px; }
+    .accom-name { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+    .accom-neighbourhood { font-size: 13px; color: var(--muted); }
+    .accom-card-body { padding: 14px 20px; }
+    .accom-dates { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .accom-address { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 5px; }
+    .accom-address::before { content: '📍'; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+    .accom-why { font-size: 14px; color: var(--text); line-height: 1.5; margin-bottom: 12px; }
+    .accom-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: var(--navy); background: #f0ece4; padding: 5px 12px; border-radius: 6px; text-decoration: none; transition: background 0.15s, color 0.15s; }
+    .accom-link:hover { background: var(--navy); color: white; }
+    .tips-box { background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px; }
+    .tips-box h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+    .tips-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tips-list li { font-size: 14px; color: var(--text); padding-left: 20px; position: relative; line-height: 1.5; }
+    .tips-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+    /* HIKES */
+    .hikes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin-bottom: 28px; }
+    .hike-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .hike-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .hike-card-top { padding: 16px 18px 12px; border-bottom: 1px solid var(--border); }
+    .hike-location-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .hike-location { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .hike-difficulty { font-size: 11.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+    .diff-easy { background: #d1fae5; color: #065f46; }
+    .diff-moderate { background: #fef3c7; color: #92400e; }
+    .hike-name { font-size: 17px; font-weight: 800; color: var(--navy); }
+    .hike-name a { color: inherit; text-decoration: none; border-bottom: 2px dotted var(--gold); transition: color 0.15s, border-color 0.15s; }
+    .hike-name a:hover { color: var(--blue); border-color: var(--blue); }
+    .hike-name a::after { content: ' ↗'; font-size: 12px; font-weight: 600; color: var(--gold); }
+    .hike-name a:hover::after { color: var(--blue); }
+    .hike-stats { display: flex; flex-wrap: wrap; gap: 14px; padding: 12px 18px; border-bottom: 1px solid var(--border); background: #fafaf8; }
+    .hike-stat { display: flex; flex-direction: column; gap: 1px; }
+    .hike-stat-val { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .hike-stat-key { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .hike-body { padding: 14px 18px; flex: 1; }
+    .hike-special { font-size: 13.5px; color: var(--text); line-height: 1.5; margin-bottom: 10px; }
+    .hike-tips { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+    .hike-cost { margin: 10px 18px 14px; font-size: 13px; font-weight: 700; color: var(--green); background: var(--green-light); padding: 5px 10px; border-radius: 6px; display: inline-block; }
+    .essentials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .essential-card { background: white; border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: 14px 16px; font-size: 13.5px; color: var(--text); line-height: 1.45; border-left: 3px solid var(--gold); }
+    .essential-card strong { display: block; color: var(--navy); margin-bottom: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 16px 40px; }
+      .budget-total-amount { font-size: 34px; }
+      .day-card { grid-template-columns: 52px 1fr; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="hero-emoji">🌍</span>
+  <h1>Europe Solo Trip 2026</h1>
+  <p class="hero-subtitle">Sep 1 – Oct 13, 2026 &nbsp;·&nbsp; 42 nights &nbsp;</p>
+  <div class="hero-pills">
+    <span class="hero-pill">🇳🇱 Netherlands</span>
+    <span class="hero-pill">🇧🇪 Belgium</span>
+    <span class="hero-pill">🇫🇷 France</span>
+    <span class="hero-pill">🇨🇭 Switzerland</span>
+    <span class="hero-pill">🇮🇹 Italy</span>
+  </div>
+</header>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showSection('itinerary', this)">🗓 Day-by-Day</button>
+    <button class="nav-btn" onclick="showSection('budget', this)">💶 Budget</button>
+    <button class="nav-btn" onclick="showSection('accommodation', this)">🏠 Accommodation</button>
+    <button class="nav-btn" onclick="showSection('hikes', this)">🥾 Hikes</button>
+    <button class="nav-btn" onclick="showSection('commute', this)">🚆 Commute</button>
+  </nav>
+</div>
+
+<main>
+
+<!-- ── ITINERARY ── -->
+<section id="itinerary" class="section active">
+  <div class="section-header"><h2 class="section-title">Day-by-Day Itinerary</h2><p class="section-desc">Sep 1 to Oct 13, 2026 — 43 days, 42 nights across Europe</p></div>
+  <div class="itinerary-filter">
+    <button class="filter-btn active" onclick="filterCity('all',this)">All Cities</button>
+    <button class="filter-btn" onclick="filterCity('amsterdam',this)">Amsterdam</button>
+    <button class="filter-btn" onclick="filterCity('haarlem',this)">Haarlem</button>
+    <button class="filter-btn" onclick="filterCity('bruges',this)">Bruges</button>
+    <button class="filter-btn" onclick="filterCity('lyon',this)">Lyon</button>
+    <button class="filter-btn" onclick="filterCity('annecy',this)">Annecy</button>
+    <button class="filter-btn" onclick="filterCity('interlaken',this)">Interlaken</button>
+    <button class="filter-btn" onclick="filterCity('grindelwald',this)">Grindelwald</button>
+    <button class="filter-btn" onclick="filterCity('bolzano',this)">Bolzano</button>
+    <button class="filter-btn" onclick="filterCity('garda',this)">Lake Garda</button>
+    <button class="filter-btn" onclick="filterCity('verona',this)">Verona</button>
+    <button class="filter-btn" onclick="filterCity('florence',this)">Florence</button>
+    <button class="filter-btn" onclick="filterCity('cinque',this)">Cinque Terre</button>
+    <button class="filter-btn" onclick="filterCity('nice',this)">Nice</button>
+  </div>
+  <div class="day-list" id="day-list">
+
+      <div class="day-card" data-city="amsterdam"><div class="day-num"><div class="day-num-big">1</div><div class="day-num-label">Sep 1</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-amsterdam">Amsterdam</span><span class="day-date">Tue · 1 Sep</span><span class="day-tag tag-arrive">✈️ Arrival · Check-in</span></div>
+        <div class="day-logistics"><strong>Arrive Dublin → Amsterdam</strong> (Aer Lingus direct, ~1h35). Train Schiphol → Centraal (15 min, <span class="cost">€5</span>). Check in (Jordaan or De Pijp), drop bags.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Ease in with a slow <strong>Jordaan canal walk</strong> — Prinsengracht and <strong>Brouwersgracht</strong> (often called the city's prettiest canal). Coffee + warm appeltaart at <strong>Winkel 43</strong>.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Golden-hour stroll along the canal belt, then your first <strong>Indonesian rijsttafel</strong> dinner — a Dutch institution.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Brouwersgracht at sunset — houseboats and 17th-century warehouses lit gold</div><div class="day-eat">Blauw (Amstelveenseweg) — best vegetarian rijsttafel in the city. Book ahead.</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="amsterdam"><div class="day-num"><div class="day-num-big">2</div><div class="day-num-label">Sep 2</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-amsterdam">Amsterdam</span><span class="day-date">Wed · 2 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Get to <strong>Albert Cuyp Market</strong> (De Pijp) early for stroopwafels hot off the iron. Then the <strong>Rijksmuseum</strong> — pre-book the 9am first slot for Rembrandt's <em>Night Watch</em> and Vermeer (2–3 hrs).</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Decompress in <strong>Vondelpark</strong>; coffee and people-watching in De Pijp.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text"><strong>Sunset canal cruise</strong> — book a small electric open boat, not the big glass-topped tourist barges (<span class="cost">~€25</span>).</span></div></div>
+        <div class="day-tips"><div class="day-gem">Buy Rijksmuseum &amp; Van Gogh tickets days ahead — timed slots sell out</div><div class="day-eat">Dessert: Patisserie Holtkamp — legendary Dutch pastries since 1969</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="amsterdam"><div class="day-num"><div class="day-num-big">3</div><div class="day-num-label">Sep 3</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-amsterdam">Amsterdam</span><span class="day-date">Thu · 3 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Van Gogh Museum</strong> (pre-booked 9am slot) — the world's largest Van Gogh collection, walked chronologically.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Jordaan deep-dive: hunt the <strong>hofjes</strong> (hidden almshouse courtyards), browse free independent galleries and the antique shops along Elandsgracht.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Pull up at a <strong>bruin café</strong> (brown bar) — Café Chris or 't Smalle — for a canalside Dutch beer.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Begijnhof — a secret 14th-c courtyard garden in the city centre (free), home to Amsterdam's oldest wooden house</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="amsterdam"><div class="day-num"><div class="day-num-big">4</div><div class="day-num-label">Sep 4</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-amsterdam">Amsterdam</span><span class="day-date">Fri · 4 Sep</span><span class="day-tag tag-daytrip">🚆 Day trip</span></div>
+        <div class="day-logistics"><strong>Day trip — Zaanse Schans.</strong> Train Centraal → Zaandijk Zaanse Schans (17 min, <span class="cost">€3.70</span> each way), then a 15-min walk. Half a day is plenty.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Working <strong>windmills</strong> on the river, plus clog-carving and cheese-making workshops in a preserved Dutch village.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Back in town, take the free ferry behind Centraal to <strong>NDSM Wharf</strong> for street art and an industrial-waterfront sunset.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Lanskroon bakery — stroopwafels made fresh daily</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="amsterdam"><div class="day-num"><div class="day-num-big">5</div><div class="day-num-label">Sep 5</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-amsterdam">Amsterdam</span><span class="day-date">Sat · 5 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Free ferry across the IJ to the <strong>EYE Film Museum</strong> — striking architecture, free ground floor and café with a skyline view.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">If you snagged tickets, the <strong>Anne Frank House</strong> (deeply moving); otherwise Het Scheepvaartmuseum (maritime) or one last canal-belt wander + souvenir shopping.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Farewell Amsterdam dinner; pack for Haarlem.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Anne Frank House sells out: tickets go online only, released ~6 weeks before — set a reminder</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="haarlem"><div class="day-num"><div class="day-num-big">6</div><div class="day-num-label">Sep 6</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-haarlem">Haarlem</span><span class="day-date">Sun · 6 Sep</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Amsterdam.</strong> Train Amsterdam → Haarlem (20 min, <span class="cost">€4.50</span>, several per hour). Check in near Grote Markt. Haarlem is Amsterdam's quieter, prettier cousin — same Golden-Age looks, none of the crowds.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">The <strong>Grote Markt</strong> — widely called the most beautiful square in the Netherlands. Wander the <strong>Gouden Straatjes</strong> (golden little streets) of independent boutiques.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Dinner on a Grote Markt terrace; riverside walk along the Spaarne.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Haarlem stroopwafel shops — the city that claims to have invented them</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="haarlem"><div class="day-num"><div class="day-num-big">7</div><div class="day-num-label">Sep 7</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-haarlem">Haarlem</span><span class="day-date">Mon · 7 Sep</span><span class="day-tag tag-daytrip">🏖️ Beach</span></div>
+        <div class="day-logistics">Haarlem's museums close on Mondays — so today is for the <strong>market and the sea</strong>.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Monday market</strong> on Grote Markt (voted the country's best) — flowers, cheese, herring. Pop into <strong>St-Bavokerk</strong> for the giant Müller organ that Mozart and Handel both played (open Mon–Sat).</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Bus 81 to <strong>Bloemendaal aan Zee</strong> (under 10 km) — wide North Sea beach backed by dunes. Walk the sand, swim if it's mild, beach-bar drink.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Windmill De Adriaan on the Spaarne — small museum, big riverside photo</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="haarlem"><div class="day-num"><div class="day-num-big">8</div><div class="day-num-label">Sep 8</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-haarlem">Haarlem</span><span class="day-date">Tue · 8 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Frans Hals Museum</strong> — the world's largest collection of Hals' portraits, split over two sites a 7-min walk apart.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Teylers Museum</strong> — the oldest museum in the Netherlands (1778): fossils, minerals, scientific instruments and Old Master drawings in a candle-era interior.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Slow Spaarne-side dinner. Last stroopwafel run before Belgium.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Teylers' Oval Room — lit by daylight only, exactly as it was 240 years ago</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="bruges"><div class="day-num"><div class="day-num-big">9</div><div class="day-num-label">Sep 9</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-bruges">Bruges</span><span class="day-date">Wed · 9 Sep</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Haarlem.</strong> Train to Bruges (<strong>~3 hrs</strong> — Haarlem → Rotterdam Centraal, transfer to an Intercity toward Antwerp, then direct into Bruges; 1-2 changes, check NS/SNCB timetables closer to travel). Check in near the historic center.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Start gently: <strong>Minnewater</strong> (Lake of Love) and the <strong>Begijnhof</strong> — a white-walled courtyard of former lay-sisters' houses. Drift up to the <strong>Markt</strong> for the Belfry's facade.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">A chocolate workshop or tasting at <strong>The Chocolate Line</strong> or <strong>Olivier Willems</strong> for hazelnut pralines.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Speculoos waffles with Belgian dark-chocolate sauce</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="bruges"><div class="day-num"><div class="day-num-big">10</div><div class="day-num-label">Sep 10</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-bruges">Bruges</span><span class="day-date">Thu · 10 Sep</span><span class="day-tag tag-hike">🥾 Dawn walk</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EARLY</span><span class="block-text"><strong>Dawn canal-ring walk</strong> (7 km, 7–8am) — stone bridges, swans, empty streets and the best light of the day. The prettiest flat walk of the whole trip.</span></div><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Belfry climb</strong> at 9am (366 steps — go early to beat the queue). Then the <strong>Groeningemuseum</strong> for the Flemish Primitives (Van Eyck, Memling).</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Canal cruise</strong> (<span class="cost">€15</span>, 30 min — the classic Bruges view), then <strong>De Halve Maan</strong> brewery tour and rooftop pour, the only working brewery in the centre.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Buy Belgian chocolates from Dumon on Eiermarkt for the long train ahead</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="lyon"><div class="day-num"><div class="day-num-big">11</div><div class="day-num-label">Sep 11</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-lyon">Bruges → Lyon</span><span class="day-date">Fri · 11 Sep</span><span class="day-tag tag-travel">🚆 Big transit day</span></div>
+        <div class="day-logistics"><strong>Check out Bruges. ~5 hrs total</strong>: local train Bruges → Brussels Midi (~1 hr), then a <strong>direct TGV</strong> Brussels Midi → Lyon Part-Dieu (no Paris transfer — book the seat reservation in advance). Check in near Croix-Rousse.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Settle in with a first look at <strong>Vieux-Lyon</strong>, the UNESCO Renaissance old town — St-Jean Cathedral and cobbled lanes.</span></div></div>
+        <div class="day-tips"><div class="day-eat">First bouchon dinner — quenelle, andouillette, the works. Lyon is France's food capital for a reason.</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="lyon"><div class="day-num"><div class="day-num-big">12</div><div class="day-num-label">Sep 12</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-lyon">Lyon</span><span class="day-date">Sat · 12 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">The <strong>traboules</strong> — secret silk-workers' passageways threading through Vieux-Lyon and Croix-Rousse (free, self-guided). The one at 54 Rue Saint-Jean is the grandest.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Musée des Beaux-Arts</strong> — one of France's finest collections after the Louvre.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text"><strong>Les Halles de Lyon Paul Bocuse</strong> — the legendary indoor food market for cheese, charcuterie and oysters.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Traboule at 54 Rue Saint-Jean — the most spectacular of them all</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="lyon"><div class="day-num"><div class="day-num-big">13</div><div class="day-num-label">Sep 13</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-lyon">Lyon</span><span class="day-date">Sun · 13 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Funicular up <strong>Fourvière hill</strong> — the basilica, the free <strong>Roman amphitheatres</strong>, and the city's best panorama.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">The <strong>Presqu'île</strong> peninsula — Place Bellecour, boutiques, and the futuristic <strong>Musée des Confluences</strong> where the two rivers meet.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Tarte praline — the bright-pink praline tart, a Lyon original</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="lyon"><div class="day-num"><div class="day-num-big">14</div><div class="day-num-label">Sep 14</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-lyon">Lyon</span><span class="day-date">Mon · 14 Sep</span><span class="day-tag tag-daytrip">🍷 Day trip</span></div>
+        <div class="day-logistics"><strong>Beaujolais wine country.</strong> ~45 min by train to Villefranche-sur-Saône; September is harvest season.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">FULL DAY</span><span class="block-text">Rolling vineyards, the golden-stone <strong>pierres dorées</strong> villages, and cellar tastings during the <em>vendanges</em>. Back by evening.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Pick up Bernachon pralines before heading to Annecy</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="annecy"><div class="day-num"><div class="day-num-big">15</div><div class="day-num-label">Sep 15</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-annecy">Lyon → Annecy</span><span class="day-date">Tue · 15 Sep</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Lyon.</strong> Direct regional TER, Lyon Part-Dieu → Annecy (<strong>~2 hrs</strong>, no changes). Check in near the Vieille Ville.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">The <strong>Vieille Ville</strong> — pastel arcaded houses over canal tributaries, the <strong>Palais de l'Isle</strong> (that triangular building mid-canal) and why they call it the "Venice of the Alps."</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text"><strong>Jardins de l'Europe</strong> and the Pont des Amours at sunset, with the lake glowing.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Petits gâteaux de Savoie or a blueberry tarte from a local pâtisserie</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="annecy"><div class="day-num"><div class="day-num-big">16</div><div class="day-num-label">Sep 16</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-annecy">Annecy</span><span class="day-date">Wed · 16 Sep</span><span class="day-tag tag-hike">🥾 Lake & trails</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Swim in <strong>Lac d'Annecy</strong> — one of Europe's cleanest lakes — off Plage des Marquisats or Plage d'Albigny (free), or rent a kayak/pedal boat (<span class="cost">€15</span>).</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Col de la Forclaz</strong>: bus up (~30 min, <span class="cost">~€4</span>), then the loop hike (9.6 km, ~3.5–4 hrs) through alpine pastures with paragliders launching out over the turquoise water.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Crepes with Nutella and hazelnut, or tartiflette for dinner</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="annecy"><div class="day-num"><div class="day-num-big">17</div><div class="day-num-label">Sep 17</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-annecy">Annecy</span><span class="day-date">Thu · 17 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Angon Waterfall trail</strong> (5 km, ~2–3 hrs) — a 35 m fall above the lake on a wild forest path, almost tourist-free.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Lakeside <strong>Promenade du Lac</strong>, last swim, and packing for the long Swiss transit ahead.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Start near Angon village on the D909 — southeast shore of the lake</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="interlaken"><div class="day-num"><div class="day-num-big">18</div><div class="day-num-label">Sep 18</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-interlaken">Annecy → Interlaken</span><span class="day-date">Fri · 18 Sep</span><span class="day-tag tag-travel">🚆 Big transit day</span></div>
+        <div class="day-logistics"><strong>Check out Annecy. ~4-5.5 hrs</strong>: regional train Annecy → Geneva, then Swiss InterCity Geneva → Bern → Interlaken Ost. Very reliable Swiss rail — no real risk of missed connections. Check in near Höheweg.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Stretch your legs on the <strong>Höheweg promenade</strong> between Lake Thun and Lake Brienz — your first proper look at the Eiger–Mönch–Jungfrau wall.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Check jungfrau.ch webcams each morning here — save the marquee high-altitude days for the clearest skies</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="interlaken"><div class="day-num"><div class="day-num-big">19</div><div class="day-num-label">Sep 19</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-interlaken">Interlaken</span><span class="day-date">Sat · 19 Sep</span><span class="day-tag tag-hike">🥾 Ridge hike</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Harder Kulm</strong> — funicular up (<span class="cost">CHF 34</span> return), then the ridge trail for the postcard panorama of both lakes and the full Eiger–Mönch–Jungfrau trio.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Down to the turquoise shore of <strong>Lake Brienz</strong> at Bönigen — lakeside walk, maybe a quick (cold!) swim.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Worth checking the Berner Oberland / Jungfrau Travel Pass or Swiss Half-Fare Card if you'll do 3+ paid mountain rides</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="interlaken"><div class="day-num"><div class="day-num-big">20</div><div class="day-num-label">Sep 20</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-interlaken">Interlaken</span><span class="day-date">Sun · 20 Sep</span><span class="day-tag tag-marquee">⭐ Don't miss</span></div>
+        <div class="day-logistics">Save this for a <strong>clear day</strong> — swap with tomorrow if the morning is cloudy.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">FULL DAY</span><span class="block-text"><strong>Oeschinensee</strong> day trip: train to Kandersteg (45 min), gondola up (<span class="cost">CHF 28</span>), then the <strong>Panoramaweg loop</strong> (10 km, ~4–5 hrs) high above a turquoise lake ringed by 3,500 m peaks.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Gentler option: stay lakeside and walk only the lower shore loop</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="interlaken"><div class="day-num"><div class="day-num-big">21</div><div class="day-num-label">Sep 21</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-interlaken">Interlaken</span><span class="day-date">Mon · 21 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Boat across <strong>Lake Brienz</strong> to <strong>Giessbach Falls</strong> (ride the world's oldest funicular), then a gentle lakeshore walk.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>St. Beatus Caves</strong> on Lake Thun (bus 21, 10 min) — a dramatic cave system behind a waterfall. A relaxed half-day before Grindelwald.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Rainy plan: Thun day trip (30 min), Funky Chocolate Club workshop, or the Bödelibad thermal pool & sauna</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="grindelwald"><div class="day-num"><div class="day-num-big">22</div><div class="day-num-label">Sep 22</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-grindelwald">Grindelwald</span><span class="day-date">Tue · 22 Sep</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Interlaken.</strong> Scenic Berner Oberland Bahn (BOB) mountain train, Interlaken Ost → Grindelwald (<strong>~30-35 min</strong>, short and scenic, no issues). Check in in the village.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">First gondola up (25 min) to the <strong>First Cliff Walk by Tissot</strong> — a steel walkway and suspension bridge cantilevered over the void, staring straight at the <strong>Eiger North Face</strong> (free once you're at First).</span></div><div class="day-block"><span class="block-label">OPTIONAL</span><span class="block-text">Adrenaline add-ons at First: the <strong>First Flyer</strong> zipline (800 m, up to 83 km/h) or the First Glider.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Bäckerei Fuchs — handmade Grindelwald hazelnut pralines, apple strudel at mountain huts</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="grindelwald"><div class="day-num"><div class="day-num-big">23</div><div class="day-num-label">Sep 23</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-grindelwald">Grindelwald</span><span class="day-date">Wed · 23 Sep</span><span class="day-tag tag-marquee">⭐ Top of Europe</span></div>
+        <div class="day-logistics">The trip's headline day — book ahead, and do it on your <strong>clearest</strong> Grindelwald morning (check the webcams at breakfast).</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">FULL DAY</span><span class="block-text"><strong>Jungfraujoch via the Eiger Express</strong> to 3,454 m: the <strong>Aletsch Glacier</strong> (longest in the Alps), the Ice Palace carved into the glacier, and the Sphinx observation deck. <span class="cost">~CHF 220–260</span> return (free with Jungfrau Travel Pass, 50% off with Half-Fare Card).</span></div></div>
+        <div class="day-tips"><div class="day-gem">Reserve the cog-train section (Eigergletscher → Jungfraujoch) in peak season — slots fill</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="grindelwald"><div class="day-num"><div class="day-num-big">24</div><div class="day-num-label">Sep 24</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-grindelwald">Grindelwald</span><span class="day-date">Thu · 24 Sep</span><span class="day-tag tag-hike">🥾 Panoramic walk</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Männlichen → Kleine Scheidegg</strong> panoramic walk — gondola up to Männlichen, then an easy ridge trail (~2 hrs) face-to-face with the Eiger, Mönch and Jungfrau the whole way.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Train down from Kleine Scheidegg; slow village time and packing for the long haul to Italy.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Optional detour: Bachalpsee lake from First (6 km round trip) if you have energy left — mirror reflections of the Schreckhorn & Wetterhorn</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="bolzano"><div class="day-num"><div class="day-num-big">25</div><div class="day-num-label">Sep 25</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-bolzano">Grindelwald → Bolzano</span><span class="day-date">Fri · 25 Sep</span><span class="day-tag tag-travel">🚆 Longest transit day</span></div>
+        <div class="day-logistics"><strong>Check out Grindelwald. ~6-6.5 hrs</strong> — the longest travel day of the trip: mountain train down to Interlaken Ost, EuroCity via Milan Central, then a fast train Milan → Bolzano. Plan this as a low-key arrival day. Check in near Piazza Walther (Old Town).</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Gentle first look: <strong>Piazza Walther</strong>, the elegant main square, and a wander through the medieval arcades of <strong>Via dei Portici</strong>.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Austro-Italian pastries and a South Tyrolean dinner — the food here is a unique German-Italian mashup</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="bolzano"><div class="day-num"><div class="day-num-big">26</div><div class="day-num-label">Sep 26</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-bolzano">Bolzano</span><span class="day-date">Sat · 26 Sep</span><span class="day-tag tag-hike">🥾 Cable car & hike</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Renon Cable Car</strong> (Via Renon 12, <span class="cost">~€15</span> return) up to the Ritten/Renon plateau, then an easy 30-min hike to the <strong>Earth Pyramids</strong> — Europe's tallest, most perfectly-shaped examples, some 25,000 years old, with Dolomites views the whole way.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>South Tyrol Museum of Archaeology</strong> — home to Ötzi the Iceman, Europe's oldest natural mummy (<span class="cost">~€13</span>).</span></div></div>
+        <div class="day-tips"><div class="day-gem">The open-air market on Via Argentieri — fresh fruit, wild herbs, cured meats, still-warm loaves</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="bolzano"><div class="day-num"><div class="day-num-big">27</div><div class="day-num-label">Sep 27</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-bolzano">Bolzano</span><span class="day-date">Sun · 27 Sep</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Castel Roncolo</strong> (Runkelstein Castle) — the best-preserved medieval fresco cycle north of the Alps (<span class="cost">~€8</span>).</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Museion</strong> contemporary art museum, or the South Tyrol Museum of Natural History for Dolomites geology; last old-town wander before Lake Garda.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Speck, Knödel (dumplings), and a glass of Lagrein — classic South Tyrolean dinner</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="garda"><div class="day-num"><div class="day-num-big">28</div><div class="day-num-label">Sep 28</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-garda">Bolzano → Riva del Garda</span><span class="day-date">Mon · 28 Sep</span><span class="day-tag tag-travel">🚆🚌 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Bolzano. ~1.5-2 hrs</strong>: train Bolzano → Rovereto (~1 hr on the main Brenner line), then <strong>Bus 332</strong> direct to Riva del Garda (~45 min, can stretch to 1 hr with traffic — check the Trentino Trasporti timetable a few days ahead, don't wing it). Check in near the coast, close to Piazza III Novembre.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Torre Apponale</strong> and the <strong>MAG museum</strong>; funicular up to the <strong>Bastione</strong> for a first lake panorama.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Lakefront aperitivo at Piazza III Novembre as the light fades over the water.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Wood-fired Margherita pizza and truffle pasta — Trentino specialities</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="garda"><div class="day-num"><div class="day-num-big">29</div><div class="day-num-label">Sep 29</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-garda">Lake Garda (Riva)</span><span class="day-date">Tue · 29 Sep</span><span class="day-tag tag-hike">🥾 Viewpoint hike</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Punta Larici hike</strong> (5.3 km, ~2 hrs, 330 m elevation gain) — medium-difficulty climb to a spectacular clifftop viewpoint over the whole lake.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Wind down at the <strong>Bastione</strong> or a lakeside beach; easy evening.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Alternative/extra: Monte Brione or the Chapel of Santa Barbara for shorter lake views</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="garda"><div class="day-num"><div class="day-num-big">30</div><div class="day-num-label">Sep 30</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-garda">Lake Garda (Riva)</span><span class="day-date">Wed · 30 Sep</span><span class="day-tag tag-daytrip">⛴️ Ferry day</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Strada del Ponale</strong> — a historic road turned coastal hiking/biking path, starting right at the Riva ferry stop; the elevated Ciclopista del Garda juts ~50 m above the lake, one of the most spectacular stretches on all of Lake Garda.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Ferry to Limone sul Garda</strong> (20–45 min, <span class="cost">€5–7</span> one-way, roughly every 3 hrs) — lemon groves and lakefront wandering.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Limone's famous lemon gelato and limoncello</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="verona"><div class="day-num"><div class="day-num-big">31</div><div class="day-num-label">Oct 1</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-verona">Riva del Garda → Verona</span><span class="day-date">Thu · 1 Oct</span><span class="day-tag tag-travel">🚌🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Riva del Garda. ~1.5-2 hrs</strong>: Bus 332 back to Rovereto (~45 min–1 hr), then a direct train Rovereto → Verona Porta Nuova (~40 min). This order (Garda before Verona) avoids backtracking through Rovereto twice. Check in near Piazza delle Erbe.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">The <strong>Roman Arena</strong> and <strong>Piazza Brà</strong> — smaller than the Colosseum but older, and still an active theatre.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Aperol spritz on <strong>Piazza delle Erbe</strong>, Verona's oldest square, built atop the old Roman forum.</span></div></div>
+        <div class="day-tips"><div class="day-eat">First proper gelato stop of the Italian leg — nocciola, gianduja</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="verona"><div class="day-num"><div class="day-num-big">32</div><div class="day-num-label">Oct 2</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-verona">Verona</span><span class="day-date">Fri · 2 Oct</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Climb <strong>Torre dei Lamberti</strong> for the best rooftop view in the city, then Juliet's House and the Scaliger Tombs.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Walk across <strong>Ponte Pietra</strong>, the oldest Roman bridge in the city.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Sunset at <strong>Castel San Pietro</strong> — the classic postcard view over Verona and the Adige River.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Opera at the Arena runs most Fri/Sat/Sun nights May–Aug (up to 6 nights/week in peak summer) — check if anything's on</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="florence"><div class="day-num"><div class="day-num-big">33</div><div class="day-num-label">Oct 3</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-florence">Verona → Florence</span><span class="day-date">Sat · 3 Oct</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Verona.</strong> Direct Frecciarossa, Verona Porta Nuova → Firenze Santa Maria Novella (<strong>~1.5 hrs</strong>, no changes). Check in in the Oltrarno.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Walk across the <strong>Ponte Vecchio</strong>, then up to <strong>Piazzale Michelangelo</strong> for the classic sunset over the Duomo and the Arno.</span></div></div>
+        <div class="day-tips"><div class="day-eat">First gelato: Gelateria dei Neri — hazelnut and dark chocolate, mandatory</div><div class="day-gem">Book NOW if you haven't: Uffizi, Accademia/David, Duomo dome climb (Brunelleschi Pass)</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="florence"><div class="day-num"><div class="day-num-big">34</div><div class="day-num-label">Oct 4</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-florence">Florence</span><span class="day-date">Sun · 4 Oct</span><span class="day-tag tag-marquee">⭐ Uffizi & Duomo</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Uffizi Gallery</strong> (pre-booked first slot) — Botticelli's <em>Birth of Venus</em>, Leonardo, Caravaggio (3–4 hrs).</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Duomo complex</strong> — climb Brunelleschi's Dome (timed slot), Giotto's Campanile and the Baptistery.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Dinner upstairs at the <strong>Mercato Centrale</strong> food hall.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Cantucci dipped in Vin Santo to finish dinner</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="florence"><div class="day-num"><div class="day-num-big">35</div><div class="day-num-label">Oct 5</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-florence">Florence</span><span class="day-date">Mon · 5 Oct</span><span class="day-tag tag-daytrip">🚆 Day trip</span></div>
+        <div class="day-logistics"><strong>Lucca day trip.</strong> ~20 min direct train from Santa Maria Novella.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">FULL DAY</span><span class="block-text">The walled city of Lucca — walk (or cycle) the flat pedestrian loop atop the intact <strong>Renaissance walls</strong>, then wander the old town's church-dotted lanes. Far more relaxed pace than Florence.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Rent a bike right at the wall gate for a fast, breezy full loop</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="cinque"><div class="day-num"><div class="day-num-big">36</div><div class="day-num-label">Oct 6</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-cinque">Florence → Cinque Terre</span><span class="day-date">Tue · 6 Oct</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Florence.</strong> Train Florence → Pisa, change for La Spezia, then the local <strong>Cinque Terre Express</strong> to Monterosso (<strong>~2.5 hrs</strong> total, stops at all 5 villages every ~20-30 min). Check in in Monterosso. Buy the <strong>Cinque Terre Card</strong> (3-day, covers trails + unlimited local trains).</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Swim off the rocks or on Monterosso's sandy beach — the only real beach of the five villages.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Trofie al pesto and focaccia at the harbour as the light goes — pesto was born here.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Limoncino semifreddo — a lemon-cream dessert unique to this coast</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="cinque"><div class="day-num"><div class="day-num-big">37</div><div class="day-num-label">Oct 7</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-cinque">Cinque Terre</span><span class="day-date">Wed · 7 Oct</span><span class="day-tag tag-marquee">⭐ Blue Trail</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EARLY</span><span class="block-text"><strong>Sentiero Azzurro</strong> (Blue Trail) — start 7am from Monterosso → Vernazza (the best and most dramatic section, above terraced vineyards and the sea).</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Sunset at <strong>Manarola's Punta Bonfiglio</strong> with a bottle of local Sciacchetrà.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Aperitivo at Nessun Dorma, Manarola — reserve or arrive early, it fills fast</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="cinque"><div class="day-num"><div class="day-num-big">38</div><div class="day-num-label">Oct 8</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-cinque">Cinque Terre</span><span class="day-date">Thu · 8 Oct</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Slow village morning — <strong>Vernazza's</strong> castle ruins and harbour (the most photogenic of the five), then clifftop <strong>Corniglia</strong> for a quiet Vermentino tasting.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">A final long swim, or the wilder, near-empty <strong>Monterosso → Levanto</strong> trail (5 km, free).</span></div></div>
+        <div class="day-tips"><div class="day-gem">Buy a jar of Monterosso pesto to bring home before you leave</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="nice"><div class="day-num"><div class="day-num-big">39</div><div class="day-num-label">Oct 9</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-nice">Cinque Terre → Nice</span><span class="day-date">Fri · 9 Oct</span><span class="day-tag tag-travel">🚆 Check-out → Check-in</span></div>
+        <div class="day-logistics"><strong>Check out Cinque Terre.</strong> Scenic coastal train La Spezia → Genoa, change to a regional train along the coast to Ventimiglia (Italy/France border), transfer directly onto a French TER into Nice Ville (<strong>~4.5 hrs</strong> total — trains are timed to connect, no long border wait). Check in in Vieux Nice.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">First stroll through <strong>Vieux Nice</strong> and along the <strong>Promenade des Anglais</strong>.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Socca — Nice's chickpea-flour street food classic</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="nice"><div class="day-num"><div class="day-num-big">40</div><div class="day-num-label">Oct 10</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-nice">Nice</span><span class="day-date">Sat · 10 Oct</span></div>
+
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text"><strong>Cours Saleya flower market</strong> — Nice's most famous market, flowers, produce, and Provençal soaps.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text"><strong>Castle Hill</strong> for the best panoramic view over the Baie des Anges.</span></div><div class="day-block"><span class="block-label">EVENING</span><span class="block-text">Dinner in the old town's narrow lanes.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Castle Hill at sunrise, if you can manage an early start — near-empty and spectacular</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="nice"><div class="day-num"><div class="day-num-big">41</div><div class="day-num-label">Oct 11</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-nice">Nice</span><span class="day-date">Sun · 11 Oct</span><span class="day-tag tag-daytrip">🚆 Day trip</span></div>
+        <div class="day-logistics"><strong>Menton.</strong> ~40 min direct train from Nice Ville, frequent departures.</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">FULL DAY</span><span class="block-text">One of the most colourful Riviera towns — the <strong>Promenade de la Mer</strong> up to Port de Garavan, the fragrant <strong>Val Rahmeh Botanical Garden</strong>, and (if energetic) the Sentier littoral du Cap Martin past Eileen Gray's Villa E-1027.</span></div></div>
+        <div class="day-tips"><div class="day-eat">Menton lemon tart — the town's signature citrus dessert</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="nice"><div class="day-num"><div class="day-num-big">42</div><div class="day-num-label">Oct 12</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-nice">Nice</span><span class="day-date">Mon · 12 Oct</span><span class="day-tag tag-hike">🥾 Coastal walk</span></div>
+        <div class="day-logistics"><strong>Cap d'Antibes.</strong> ~20 min direct train from Nice (<span class="cost">~€4</span>).</div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">FULL DAY</span><span class="block-text"><strong>Sentier du Littoral</strong> (Sentier de Tirepoil) — a narrow 1–2 hr coastal trail hugging the cliffs of Cap d'Antibes, a quieter alternative to Monaco or Èze. Grippy shoes recommended, swimmers in summer.</span></div></div>
+        <div class="day-tips"><div class="day-gem">Bring at least 1L of water and sun protection — minimal shade on the trail</div></div>
+      </div></div>
+
+      <div class="day-card" data-city="nice"><div class="day-num"><div class="day-num-big">43</div><div class="day-num-label">Oct 13</div></div><div class="day-body">
+        <div class="day-header"><span class="day-city-badge city-nice">Departure</span><span class="day-date">Tue · 13 Oct</span><span class="day-tag tag-depart">✈️ Check-out · Fly home</span></div>
+        <div class="day-logistics"><strong>Check out Nice.</strong> Local tram from central Nice to Nice Côte d'Azur Airport (NCE), ~30 min. <strong>Fly Ryanair FR3955, Nice (NCE) → Dublin (DUB), 10:45–12:25.</strong></div>
+        <div class="day-blocks"><div class="day-block"><span class="block-label">MORNING</span><span class="block-text">Last coffee and croissant in Vieux Nice.</span></div><div class="day-block"><span class="block-label">AFTERNOON</span><span class="block-text">Depart for the airport with plenty of buffer.</span></div></div>
+        <div class="day-tips"><div class="day-gem">42 nights, 5 countries, 13 stops — buongiorno to goodnight. Safe travels home. 🇮🇪</div></div>
+      </div></div>
+
+    </div>
+</section>
+
+<!-- ── BUDGET (interactive) ── -->
+<section id="budget" class="section">
+  <div class="section-header"><h2 class="section-title">Trip Budget Breakdown</h2><p class="section-desc">All figures in EUR. Click any number to edit it — totals update automatically.</p></div>
+
+  <div class="budget-total-banner">
+    <div>
+      <div class="budget-total-label">Grand Total</div>
+      <div class="budget-total-amount" id="grand-total-display">€8,034</div>
+      <div class="budget-total-note">Accommodation + daily costs + one-off expenses</div>
+    </div>
+    <div class="budget-side-totals">
+      <div><span>City costs</span><strong id="city-subtotal-display">€6,372</strong></div>
+      <div><span>One-off costs</span><strong id="oneoff-subtotal-display">€1,662</strong></div>
+      <div><span>Prepaid so far</span><strong class="prepaid-val" id="prepaid-display">€0</strong></div>
+      <div><span>Remaining to pay</span><strong class="remaining-val" id="remaining-display">€0</strong></div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:var(--muted);margin:-18px 0 22px;">Accommodation (all 13 stays confirmed) counts as prepaid automatically. Tick "Paid" on one-off items as you book them — food and daily activities are always future spend.</p>
+
+  <div class="budget-grid">
+    <!-- City table -->
+    <div class="budget-table-wrap">
+      <div class="budget-table-header">
+        <span>Per City Daily Costs</span>
+      </div>
+      <div class="budget-table-scroll"><table class="budget-table" id="city-table">
+        <colgroup>
+          <col class="col-city"><col class="col-num"><col class="col-num"><col class="col-num"><col class="col-num"><col class="col-num">
+        </colgroup>
+        <thead><tr><th>City</th><th>Nights</th><th>Airbnb/Night</th><th>Food/Day</th><th>Activities</th><th>Total</th></tr></thead>
+        <tbody id="city-tbody">
+          <tr><td>Amsterdam</td><td><input class="num-input" type="number" value="5" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="129" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="30" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="20" oninput="recalcCity(this)"></td><td class="row-total">€895</td></tr>
+          <tr><td>Haarlem</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="82" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="26" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="14" oninput="recalcCity(this)"></td><td class="row-total">€366</td></tr>
+          <tr><td>Bruges</td><td><input class="num-input" type="number" value="2" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="95" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="28" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="27" oninput="recalcCity(this)"></td><td class="row-total">€300</td></tr>
+          <tr><td>Lyon</td><td><input class="num-input" type="number" value="4" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="76" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="32" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="11" oninput="recalcCity(this)"></td><td class="row-total">€476</td></tr>
+          <tr><td>Annecy</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="101" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="28" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="6" oninput="recalcCity(this)"></td><td class="row-total">€405</td></tr>
+          <tr><td>Interlaken</td><td><input class="num-input" type="number" value="4" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="125" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="48" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="37" oninput="recalcCity(this)"></td><td class="row-total">€840</td></tr>
+          <tr><td>Grindelwald</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="128" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="48" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="40" oninput="recalcCity(this)"></td><td class="row-total">€648</td></tr>
+          <tr><td>Bolzano</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="92" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="28" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="15" oninput="recalcCity(this)"></td><td class="row-total">€405</td></tr>
+          <tr><td>Riva del Garda</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="98" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="28" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="8" oninput="recalcCity(this)"></td><td class="row-total">€402</td></tr>
+          <tr><td>Verona</td><td><input class="num-input" type="number" value="2" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="109" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="30" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="10" oninput="recalcCity(this)"></td><td class="row-total">€298</td></tr>
+          <tr><td>Florence</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="65" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="28" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="25" oninput="recalcCity(this)"></td><td class="row-total">€354</td></tr>
+          <tr><td>Cinque Terre</td><td><input class="num-input" type="number" value="3" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="129" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="32" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="8" oninput="recalcCity(this)"></td><td class="row-total">€507</td></tr>
+          <tr><td>Nice</td><td><input class="num-input" type="number" value="4" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="81" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="30" oninput="recalcCity(this)"></td><td><input class="num-input" type="number" value="8" oninput="recalcCity(this)"></td><td class="row-total">€476</td></tr>
+        </tbody>
+        <tfoot><tr class="total-row"><td colspan="5"><strong>City Subtotal</strong></td><td class="num"><strong id="city-subtotal-table">€6,372</strong></td></tr></tfoot>
+      </table></div>
+      <div class="edit-hint">✏️ Click any number to edit — totals recalculate automatically</div>
+    </div>
+
+    <!-- One-off table -->
+    <div class="budget-table-wrap">
+      <div class="budget-table-header">
+        <span>One-Off Costs</span>
+        <button class="add-row-btn" onclick="addOneOffRow()">+ Add item</button>
+      </div>
+      <div class="budget-table-scroll"><table class="budget-table" id="oneoff-table">
+        <colgroup>
+          <col style="width:28%"><col class="col-notes"><col class="col-num"><col class="col-paid"><col class="col-del">
+        </colgroup>
+        <thead><tr><th>Item</th><th style="text-align:left">Notes</th><th>Cost (€)</th><th>Paid</th><th></th></tr></thead>
+        <tbody id="oneoff-tbody">
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Dublin → Amsterdam ✈️"></td><td><input class="text-input notes-input" type="text" value="Aer Lingus direct, Sep 1"></td><td><input class="num-input" type="number" value="47" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Nice → Dublin ✈️"></td><td><input class="text-input notes-input" type="text" value="Ryanair FR3955, 13 Oct, Ref L3BS2T"></td><td><input class="num-input" type="number" value="46" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Haarlem → Bruges train"></td><td><input class="text-input notes-input" type="text" value="Via Rotterdam + Brussels, DNR HHLQPPT"></td><td><input class="num-input" type="number" value="50" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Bruges → Lyon (direct TGV)"></td><td><input class="text-input notes-input" type="text" value="Via Brussels Midi, no Paris transfer"></td><td><input class="num-input" type="number" value="90" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Lyon → Annecy"></td><td><input class="text-input notes-input" type="text" value="Direct TER, no changes"></td><td><input class="num-input" type="number" value="20" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Annecy → Interlaken"></td><td><input class="text-input notes-input" type="text" value="Via Geneva + Bern (Swiss IC)"></td><td><input class="num-input" type="number" value="75" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Interlaken → Grindelwald"></td><td><input class="text-input notes-input" type="text" value="BOB mountain train"></td><td><input class="num-input" type="number" value="15" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Grindelwald → Bolzano"></td><td><input class="text-input notes-input" type="text" value="Via Interlaken Ost + Milan (longest leg)"></td><td><input class="num-input" type="number" value="110" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Bolzano → Riva del Garda"></td><td><input class="text-input notes-input" type="text" value="Train to Rovereto + Bus 332"></td><td><input class="num-input" type="number" value="13" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Riva del Garda → Verona"></td><td><input class="text-input notes-input" type="text" value="Bus 332 + train from Rovereto"></td><td><input class="num-input" type="number" value="11" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Verona → Florence"></td><td><input class="text-input notes-input" type="text" value="Direct Frecciarossa"></td><td><input class="num-input" type="number" value="40" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Florence → Cinque Terre"></td><td><input class="text-input notes-input" type="text" value="Regionale + IC via Pisa, 6 Oct"></td><td><input class="num-input" type="number" value="22" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr class="oneoff-row-paid"><td><input class="text-input" type="text" value="Cinque Terre → Nice"></td><td><input class="text-input notes-input" type="text" value="Via Genoa + Ventimiglia"></td><td><input class="num-input" type="number" value="27" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)" checked></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Jungfraujoch return 🏔️"></td><td><input class="text-input notes-input" type="text" value="Top of Europe — book ahead"></td><td><input class="num-input" type="number" value="265" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Cinque Terre hiking card"></td><td><input class="text-input notes-input" type="text" value="Trail + local trains"></td><td><input class="num-input" type="number" value="21" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Renon cable car return 🚡"></td><td><input class="text-input notes-input" type="text" value="Bolzano — Earth Pyramids access"></td><td><input class="num-input" type="number" value="15" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Verona Arena + Torre Lamberti"></td><td><input class="text-input notes-input" type="text" value="Combo entry"></td><td><input class="num-input" type="number" value="15" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Schengen visa fee"></td><td><input class="text-input notes-input" type="text" value="VFS Global"></td><td><input class="num-input" type="number" value="90" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Travel insurance"></td><td><input class="text-input notes-input" type="text" value="€30,000 min Schengen coverage, 42 nights"></td><td><input class="num-input" type="number" value="75" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Passport photos"></td><td><input class="text-input notes-input" type="text" value="Photogogo, Abbey St Dublin"></td><td><input class="num-input" type="number" value="15" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Dessert &amp; treat fund 🍰"></td><td><input class="text-input notes-input" type="text" value="Gelato, pralines, pastries"></td><td><input class="num-input" type="number" value="320" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+          <tr><td><input class="text-input" type="text" value="Buffer / miscellaneous"></td><td><input class="text-input notes-input" type="text" value="Shopping, tips, unexpected"></td><td><input class="num-input" type="number" value="280" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>
+        </tbody>
+        <tfoot><tr class="total-row"><td colspan="3"><strong>One-Off Subtotal</strong></td><td class="num"><strong id="oneoff-subtotal-table">€1,662</strong></td></tr></tfoot>
+      </table></div>
+      <div class="edit-hint">✏️ Click any field to edit · "+ Add item" to add rows · ✕ to delete</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACCOMMODATION ── -->
+<section id="accommodation" class="section">
+  <div class="section-header"><h2 class="section-title">Accommodation</h2></div>
+  <div class="accom-grid">
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇳🇱 Amsterdam</span><span class="accom-nights-pill">5 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 1 – Sep 6</div><div class="accom-address">Willemsstraat 59 1, Amsterdam, Noord-Holland 1015 JD, Netherlands</div><div class="accom-host">Hosted by Steven</div><div class="accom-times">Check-in 13:00 · Check-out 12:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HM5XDWDNK4" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇳🇱 Haarlem</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 6 – Sep 9</div><div class="accom-address">Herensingel 163, Haarlem, North Holland 2032 RW, Netherlands</div><div class="accom-host">Hosted by Nina</div><div class="accom-times">Check-in 15:00 · Check-out 11:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMYTXNNJMY" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇧🇪 Bruges</span><span class="accom-nights-pill">2 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 9 – Sep 11</div><div class="accom-address">Hallestraat 4, Bruges, Flanders 8000, Belgium</div><div class="accom-host">Hosted by Johan</div><div class="accom-times">Check-in 15:00 · Check-out 12:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMWFSR8RNX" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇫🇷 Lyon</span><span class="accom-nights-pill">4 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 11 – Sep 15 </div><div class="accom-address">58 Grande Rue de la Croix-Rousse, Lyon, Rhône-Alpes 69004, France</div><div class="accom-host">Hosted by Cathy</div><div class="accom-times">Check-in 17:00 · Check-out 11:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMT9N48RA4" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇫🇷 Annecy</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 15 – Sep 18 </div><div class="accom-address">12 Rue du Pont Morens, 3e étage, Annecy, Auvergne-Rhône-Alpes 74000, France</div><div class="accom-host">Hosted by Alice</div><div class="accom-times">Check-in 17:00 · Check-out 12:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMPBNWRZWB" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇨🇭 Interlaken (Matten)</span><span class="accom-nights-pill">4 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 18 – Sep 22 </div><div class="accom-address">Gsteigstrasse 12, Matten bei Interlaken, Bern 3800, Switzerland</div><div class="accom-host">Hosted by Q-Lodge</div><div class="accom-times">Check-in 16:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMC4D5JQY2" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇨🇭 Grindelwald</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 22 – Sep 25</div><div class="accom-address">Grindelwaldstrasse 16, B'n'b Brüggstock, Grindelwald, Bern 3816, Switzerland</div><div class="accom-host">Hosted by Dany</div><div class="accom-times">Check-in 15:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMYYCQQB49" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇮🇹 Dolomites (Bolzano)</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 25 – Sep 28 </div><div class="accom-address">Via Vintler, 5/18, Bolzano, Trentino-Alto Adige 39100, Italy</div><div class="accom-host">Hosted by Giorgio</div><div class="accom-times">Check-in 15:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMDNZ3XQYX" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇮🇹 Lake Garda (Riva)</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Sep 28 – Oct 1 </div><div class="accom-address">Via San Maria, 16, Riva del Garda, Trentino-Alto Adige 38066, Italy</div><div class="accom-host">Hosted by Matteo</div><div class="accom-times">Check-in 17:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMK8X38Q29" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇮🇹 Verona</span><span class="accom-nights-pill">2 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Oct 1 – Oct 3 </div><div class="accom-address">Via Salici 2B, Verona, Veneto 37121, Italy</div><div class="accom-host">Hosted by Viola</div><div class="accom-times">Check-in 15:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMSWHRM4SY" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇮🇹 Florence</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Oct 3 – Oct 6 </div><div class="accom-address">Via del Ponte Sospeso, 22, Florence, Tuscany 50142, Italy</div><div class="accom-host">Hosted by Luigi</div><div class="accom-times">Check-in 12:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMKQXN84AY" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇮🇹 Cinque Terre</span><span class="accom-nights-pill">3 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Oct 6 – Oct 9</div><div class="accom-address">Via San Martino 1, Monterosso al Mare, Liguria 19016, Italy</div><div class="accom-host">Hosted by Raffaella</div><div class="accom-times">Check-in 14:00 · Check-out 10:00</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMRSAA2RJR" target="_blank">View Booking →</a></div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-card-header"><div class="accom-city-row"><span class="accom-city-label">🇫🇷 Nice</span><span class="accom-nights-pill">4 nights</span></div></div>
+      <div class="accom-card-body"><div class="accom-dates">Oct 9 – Oct 13 </div><div class="accom-address">Rue Place Vieille 7, Nice, Provence-Alpes-Côte d'Azur 06300, France</div><div class="accom-host">Hosted by Romain</div><a class="accom-link" href="https://www.airbnb.ie/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMBRAW49XM" target="_blank">View Booking →</a></div>
+    </div>
+  </div>
+  <div class="tips-box">
+    <h3>Booking Notes</h3>
+    <ul class="tips-list">
+      <li>Use Revolut or Wise for all payments — saves 2–3% switching between EUR and CHF in Switzerland.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── HIKES ── -->
+<section id="hikes" class="section">
+  <div class="section-header"><h2 class="section-title">Best Hikes — Full Trip</h2></div>
+  <div class="hikes-grid"><div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇧🇪 Bruges, Belgium</span><span class="hike-difficulty diff-easy">Easy</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Bruges%20Belgium%20canal%20walk+trail+hiking" target="_blank" rel="noopener">Minnewater &amp; Bruges Canal Ring Walk</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">7 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">2 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">Flat</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">7–8am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Walk the full canal ring of the medieval city at dawn. Stone bridges, swans, empty streets. The most beautiful flat walk on the entire trip.</div><div class="hike-tips">Start at Minnewater Lake. Walk clockwise around the canal ring. Free, no booking. Bring camera — morning light is extraordinary.</div></div><span class="hike-cost">Free</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇨🇭 Interlaken, Switzerland</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Harder%20Kulm%20Interlaken+trail+hiking" target="_blank" rel="noopener">Harder Kulm Ridge Hike</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">6.4 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">3–4 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~700m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">8am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Panoramic ridge above Interlaken with views of both lakes (Thun &amp; Brienz) and the full Eiger-Mönch-Jungfrau trio. One of the best viewpoints in Switzerland.</div><div class="hike-tips">Take funicular up from Interlaken Ost (CHF 34 return, or hike up in 2.5 hrs). Hike the ridge trail then descend. Boots recommended.</div></div><span class="hike-cost">CHF 34 or free if hiking both ways</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇨🇭 Interlaken, Switzerland</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Oeschinensee%20Panoramaweg+trail+hiking" target="_blank" rel="noopener">Oeschinen Lake Panoramaweg</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">10 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">4–5 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~600m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">9am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">One of Switzerland's most beautiful alpine lakes — turquoise water surrounded by 3,500m peaks. The Panoramaweg trail above the lake has extraordinary views.</div><div class="hike-tips">Train to Kandersteg (45 min from Interlaken), then gondola to Oeschinen Lake (CHF 28 return). Trail is well signed. Best on a clear day.</div></div><span class="hike-cost">CHF 28 (gondola) + ~€12 train</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇨🇭 Grindelwald, Switzerland</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Bachalpsee%20Grindelwald+trail+hiking" target="_blank" rel="noopener">Bachalpsee Lake Trail</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">7 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">3–4 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~250m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">7am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Emerald alpine lake perfectly reflecting the Wetterhorn and Schreckhorn. One of the most photographed hikes in Switzerland — completely worth it.</div><div class="hike-tips">Take First gondola from Grindelwald (CHF 34 return). Hike from First station to Bachalpsee (~1hr). Trail is clear and well marked. Boots needed.</div></div><span class="hike-cost">CHF 34 (gondola)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇨🇭 Grindelwald, Switzerland</span><span class="hike-difficulty diff-easy">Easy–Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=First%20Cliff%20Walk%20Grindelwald+trail+hiking" target="_blank" rel="noopener">First Cliff Walk &amp; Eiger Trail</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">6 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">2–3 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~200m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">9am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Clifftop trail with a suspension bridge hanging over a sheer drop. Views directly at the Eiger North Face. Easy to moderate, high drama.</div><div class="hike-tips">Start at First gondola station. Cliff Walk is free once you're at First. Combine with Bachalpsee for a full day. Well-maintained path with safety rails.</div></div><span class="hike-cost">CHF 34 (gondola to First)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇫🇷 Annecy, France</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Col%20de%20la%20Forclaz%20Annecy+trail+hiking" target="_blank" rel="noopener">Col de la Forclaz Loop</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">9.6 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">3.5–4 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~500m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">8:30am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Alpine pastures above Lake Annecy with sweeping views down to the turquoise water. Paragliders launch from here — watching them from the trail is spectacular.</div><div class="hike-tips">Take bus from Annecy to Col de la Forclaz (30 min). Loop trail well marked. Good hiking shoes essential.</div></div><span class="hike-cost">~€4 (bus return)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇨🇭 Grindelwald, Switzerland</span><span class="hike-difficulty diff-easy">Easy</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Mannlichen%20Kleine%20Scheidegg+trail+hiking" target="_blank" rel="noopener">Männlichen → Kleine Scheidegg Panoramic Walk</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">4.3 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">~2 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~150m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">9am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">An easy ridge trail with the Eiger, Mönch and Jungfrau in view the entire way — one of the best effort-to-view ratios in the Alps.</div><div class="hike-tips">Gondola up to Männlichen, walk the ridge to Kleine Scheidegg, then train back down to Grindelwald. Well-signed, minimal elevation change.</div></div><span class="hike-cost">~CHF 40 (gondola)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇮🇹 Bolzano, Italy</span><span class="hike-difficulty diff-easy">Easy</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Erdpyramiden%20Ritten%20Renon%20Bolzano+trail+hiking" target="_blank" rel="noopener">Earth Pyramids of Renon</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">~3 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">~30 min</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">Minimal</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">Any time</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Europe's tallest and most perfectly-shaped earth pyramids — boulder-topped soil pillars estimated at 25,000 years old, with Dolomites views throughout.</div><div class="hike-tips">Take the Renon Cable Car from central Bolzano (Via Renon 12), then an easy signed path from Soprabolzano/Collalbo. Very light effort, big payoff.</div></div><span class="hike-cost">~€15 (cable car return)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇮🇹 Lake Garda (Riva), Italy</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Punta%20Larici%20Riva%20del%20Garda+trail+hiking" target="_blank" rel="noopener">Punta Larici Viewpoint Hike</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">5.3 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">~2 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~330m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">8am</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">A medium-difficulty climb to a dramatic clifftop viewpoint looking straight down the length of Lake Garda. One of the best panoramas on the lake.</div><div class="hike-tips">Trailhead accessible from Riva del Garda. Moderate climb, sturdy shoes recommended. Combine with a wind-down at the Bastione afterward.</div></div><span class="hike-cost">Free</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇮🇹 Lake Garda (Riva), Italy</span><span class="hike-difficulty diff-easy">Easy</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Strada%20del%20Ponale%20Riva%20del%20Garda+trail+hiking" target="_blank" rel="noopener">Strada del Ponale Coastal Path</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">~5 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">1.5–2 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~100m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">Any time</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">A historic road turned hiking/biking path along the coast, with an elevated section (Ciclopista del Garda) jutting ~50m above the lake — one of the most spectacular stretches on all of Lake Garda.</div><div class="hike-tips">Starts right at the Riva ferry stop. Flat, easy, bike-friendly. Combine with the Limone ferry for a full day out on the water and the trail.</div></div><span class="hike-cost">Free</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇮🇹 Verona, Italy</span><span class="hike-difficulty diff-easy">Easy</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Castel%20San%20Pietro%20Verona+trail+hiking" target="_blank" rel="noopener">Castel San Pietro Sunset Walk</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">2.5 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">1 hr</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~100m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">Sunset</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">Short climb across the Adige River to the classic postcard viewpoint over Verona's rooftops, the river bend, and the Roman Arena.</div><div class="hike-tips">Cross Ponte Pietra, then climb via steps or the funicular. Best at golden hour — arrive 30 min before sunset for a spot.</div></div><span class="hike-cost">Free (funicular optional, ~€2)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇮🇹 Cinque Terre, Italy</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Sentiero%20Azzurro%20Cinque%20Terre+trail+hiking" target="_blank" rel="noopener">Sentiero Azzurro — Blue Trail (All 5 Villages)</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">12 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">5–6 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">~500m</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">7am sharp</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">The iconic trail connecting all five cliff-hanging villages above the Ligurian Sea. Best section: Vernazza → Corniglia. Coastal views, terraced vineyards, sea cliffs.</div><div class="hike-tips">Cinque Terre hiking card required (€18 includes trail access + local trains). Take train back from Riomaggiore. Go early to beat heat and crowds.</div></div><span class="hike-cost">€18 (Cinque Terre card)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇫🇷 Nice, France</span><span class="hike-difficulty diff-moderate">Moderate</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Sentier%20du%20Littoral%20Cap%20d%27Antibes+trail+hiking" target="_blank" rel="noopener">Sentier du Littoral, Cap d&#39;Antibes</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">5 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">1–2 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">Minimal</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">Morning</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">A narrow coastal trail hugging the cliffs of Cap d'Antibes — a quieter, wilder alternative to the crowds of Monaco or Èze, with the most iconic sections running right at the water's edge.</div><div class="hike-tips">Train from Nice to Antibes (~20 min, ~€4). Grippy shoes essential — rocks get slick near the water. Bring swimmers in summer.</div></div><span class="hike-cost">~€4 (train)</span></div>
+    <div class="hike-card"><div class="hike-card-top"><div class="hike-location-row"><span class="hike-location">🇫🇷 Nice, France</span><span class="hike-difficulty diff-easy">Easy</span></div><div class="hike-name"><a href="https://www.google.com/search?q=Val%20Rahmeh%20garden%20Menton+trail+hiking" target="_blank" rel="noopener">Menton Promenade &amp; Val Rahmeh Garden</a></div></div><div class="hike-stats"><div class="hike-stat"><div class="hike-stat-val">~6 km</div><div class="hike-stat-key">Distance</div></div><div class="hike-stat"><div class="hike-stat-val">2–3 hrs</div><div class="hike-stat-key">Duration</div></div><div class="hike-stat"><div class="hike-stat-val">Flat</div><div class="hike-stat-key">Elevation</div></div><div class="hike-stat"><div class="hike-stat-val">Any time</div><div class="hike-stat-key">Start</div></div></div><div class="hike-body"><div class="hike-special">A flat, colourful seafront walk through one of the prettiest towns on the Riviera, past botanical gardens fragrant with citrus.</div><div class="hike-tips">Direct train from Nice Ville (~40 min, frequent). Walk the Promenade de la Mer to Port de Garavan, detour to the Val Rahmeh garden.</div></div><span class="hike-cost">Train fare only</span></div>
+  </div>
+
+  <div class="section-header" style="margin-top:32px;"><h2 class="section-title" style="font-size:20px;">Hiking Essentials to Pack</h2></div>
+  <div class="essentials-grid">
+    <div class="essential-card"><strong>Footwear</strong>Trail running shoes or light hiking boots cover all hikes on this list. No mountaineering boots needed.</div>
+    <div class="essential-card"><strong>Layers</strong>September mornings in the Alps (Grindelwald, Interlaken, Annecy) can be 8–12°C at altitude — pack a mid-layer fleece.</div>
+    <div class="essential-card"><strong>Water</strong>Carry 1.5L minimum for Swiss and Italian hikes. Refill at mountain huts (free or €1) in Switzerland.</div>
+    <div class="essential-card"><strong>Snacks</strong>Läderach chocolate bars (Switzerland) and Ligurian focaccia (Cinque Terre) make outstanding trail snacks.</div>
+    <div class="essential-card"><strong>Apps</strong>Download AllTrails and Komoot before leaving Ireland. Save offline maps for Switzerland and Cinque Terre trails.</div>
+    <div class="essential-card"><strong>Swiss Passes</strong>Jungfrau Travel Pass or Swiss Travel Pass gives discounts on gondolas and mountain trains — worth checking if doing 3+ paid rides.</div>
+    <div class="essential-card"><strong>Weather</strong>In the Alps, morning is usually clear. If clouds build by midday, that's normal — plan summit hikes for morning.</div>
+    <div class="essential-card"><strong>Trail Status</strong>Check Cinque Terre National Park website (parconazionale5terre.it) for trail closures before you go — sections close after rain.</div>
+  </div>
+</section>
+
+<!-- ── COMMUTE ── -->
+<section id="commute" class="section">
+  <div class="section-header"><h2 class="section-title">Commute Tracker</h2></div>
+
+  <div class="commute-summary-bar">
+    <div class="commute-summary-item total"><div class="num">14</div><div class="lbl">Total legs</div></div>
+    <div class="commute-summary-item booked"><div class="num">10</div><div class="lbl">Booked</div></div>
+    <div class="commute-summary-item unbooked"><div class="num">4</div><div class="lbl">No booking yet</div></div>
+  </div>
+
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇮🇪 Dublin → 🇳🇱 Amsterdam</span>
+        <span class="commute-date">Tue 1 Sep 2026</span>
+        <span class="commute-total-time">⏱ 2h 45m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">09:55–12:40</span><span class="commute-leg-route"><span class="commute-leg-mode">EI 604</span><strong>Dublin (DUB) → Amsterdam (AMS)</strong></span><span class="commute-leg-meta">Ref 2KC232 · Aer Lingus</span></div></div>
+    </div>
+    <div class="commute-card is-unbooked">
+      <div class="commute-head">
+        <span class="commute-route">🇳🇱 Amsterdam → Haarlem</span>
+        <span class="commute-date">Sun 6 Sep 2026</span>
+        <span class="commute-total-time is-estimate">⏱ ~20m</span>
+        <span class="commute-status status-unbooked">No booking yet</span>
+      </div>
+      <div class="commute-body"><div class="commute-empty">No tickets booked yet for this leg.</div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇳🇱 Haarlem → 🇧🇪 Bruges</span>
+        <span class="commute-date">Wed 9 Sep 2026</span>
+        <span class="commute-total-time">⏱ 4h 3m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">13:23–14:18</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 2341</span><strong>Haarlem → Rotterdam Centraal</strong></span><span class="commute-leg-meta">DNR HHLQPPT · €31.80</span></div><div class="commute-leg"><span class="commute-leg-time">14:42–16:11</span><span class="commute-leg-route"><span class="commute-leg-mode">Eurocity Direct 9544</span><strong>Rotterdam Centraal → Brussels-Midi</strong></span><span class="commute-leg-meta">Same booking</span></div><div class="commute-leg"><span class="commute-leg-time">16:29–17:26</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 1537</span><strong>Brussels-Midi → Bruges</strong></span><span class="commute-leg-meta">DNR HHLQPPT · €18.00</span></div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇧🇪 Bruges → 🇫🇷 Lyon</span>
+        <span class="commute-date">Fri 11 Sep 2026</span>
+        <span class="commute-total-time">⏱ 6h 1m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">10:58–11:53</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 510</span><strong>Bruges station → Brussels-Midi</strong></span><span class="commute-leg-meta">DNR JKGTTWV · €21.60</span></div><div class="commute-leg"><span class="commute-leg-time">13:09–16:59</span><span class="commute-leg-route"><span class="commute-leg-mode">TGV 9830</span><strong>Bruxelles Midi → Lyon Part-Dieu</strong></span><span class="commute-leg-meta">Coach 5, Seat 537 · Ref 3EAHD4 · €147.00</span></div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇫🇷 Lyon → Annecy</span>
+        <span class="commute-date">Tue 15 Sep 2026</span>
+        <span class="commute-total-time">⏱ 1h 59m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">12:08–14:07</span><span class="commute-leg-route"><span class="commute-leg-mode">TER 17978</span><strong>Lyon Part-Dieu → Annecy</strong></span><span class="commute-leg-meta">Ref GWJSMF · €33.90</span></div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇫🇷 Annecy → 🇨🇭 Interlaken</span>
+        <span class="commute-date">Fri 18 Sep 2026</span>
+        <span class="commute-total-time">⏱ 5h 28m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">10:00–10:50</span><span class="commute-leg-route"><span class="commute-leg-mode">Bus 51822</span><strong>Annecy, Gare Routière → Genève, Aéroport</strong></span><span class="commute-leg-meta">BlaBlaCar Bus · Booking U7I1JP · Seat 11A</span></div><div class="commute-leg"><span class="commute-leg-time">12:25–14:26</span><span class="commute-leg-route"><span class="commute-leg-mode">IC1 721</span><strong>Genève-Aéroport → Bern Hauptbahnhof</strong></span><span class="commute-leg-meta">Booking 151485057087 · Supersaver fare</span></div><div class="commute-leg"><span class="commute-leg-time">14:34–15:28</span><span class="commute-leg-route"><span class="commute-leg-mode">IC61 623</span><strong>Bern Hauptbahnhof → Interlaken Ost</strong></span><span class="commute-leg-meta">Same booking · Supersaver fare</span></div></div>
+    </div>
+    <div class="commute-card is-unbooked">
+      <div class="commute-head">
+        <span class="commute-route">🇨🇭 Interlaken → Grindelwald</span>
+        <span class="commute-date">Tue 22 Sep 2026</span>
+        <span class="commute-total-time is-estimate">⏱ ~30–35m</span>
+        <span class="commute-status status-unbooked">No booking yet</span>
+      </div>
+      <div class="commute-body"><div class="commute-empty">No tickets booked yet for this leg.</div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇨🇭 Grindelwald → 🇮🇹 Bolzano</span>
+        <span class="commute-date">Fri 25 Sep 2026</span>
+        <span class="commute-total-time">⏱ 8h 14m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">12:17–12:54</span><span class="commute-leg-route"><span class="commute-leg-mode">R61 246</span><strong>Grindelwald station → Interlaken Ost</strong></span><span class="commute-leg-meta">Booking 151485075221</span></div><div class="commute-leg"><span class="commute-leg-time">12:59–13:23</span><span class="commute-leg-route"><span class="commute-leg-mode">IC61 972</span><strong>Interlaken Ost → Spiez</strong></span><span class="commute-leg-meta">Same booking</span></div><div class="commute-leg"><span class="commute-leg-time">14:05–16:55</span><span class="commute-leg-route"><span class="commute-leg-mode">EC 65</span><strong>Spiez → Milano Centrale</strong></span><span class="commute-leg-meta">1st class, Seat 51 · PNR PJMJYN · CHF 104</span></div><div class="commute-leg"><span class="commute-leg-time">17:15–18:28</span><span class="commute-leg-route"><span class="commute-leg-mode">FR 9749</span><strong>Milano Centrale → Verona Porta Nuova</strong></span><span class="commute-leg-meta">Business, Seat 6D · €44.00</span></div><div class="commute-leg"><span class="commute-leg-time">18:45–20:31</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 610</span><strong>Verona Porta Nuova → Bolzano/Bozen</strong></span><span class="commute-leg-meta">1st class, Seat 7A · €24.50</span></div><div class="commute-empty" style="font-style:normal;margin-top:6px;"><strong>Total order: CHF 165.00</strong> — the longest travel day of the trip, 5 connecting legs.</div></div>
+    </div>
+    <div class="commute-card is-unbooked">
+      <div class="commute-head">
+        <span class="commute-route">🇮🇹 Bolzano → Riva del Garda</span>
+        <span class="commute-date">Mon 28 Sep 2026</span>
+        <span class="commute-total-time is-estimate">⏱ ~1.5–2h</span>
+        <span class="commute-status status-unbooked">No booking yet</span>
+      </div>
+      <div class="commute-body"><div class="commute-empty">No tickets booked yet for this leg.</div></div>
+    </div>
+    <div class="commute-card is-unbooked">
+      <div class="commute-head">
+        <span class="commute-route">🇮🇹 Riva del Garda → Verona</span>
+        <span class="commute-date">Thu 1 Oct 2026</span>
+        <span class="commute-total-time is-estimate">⏱ ~1.5–2h</span>
+        <span class="commute-status status-unbooked">No booking yet</span>
+      </div>
+      <div class="commute-body"><div class="commute-empty">No tickets booked yet for this leg.</div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇮🇹 Verona → Florence</span>
+        <span class="commute-date">Sat 3 Oct 2026</span>
+        <span class="commute-total-time">⏱ 1h 32m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">14:22–15:54</span><span class="commute-leg-route"><span class="commute-leg-mode">Italo 8959</span><strong>Verona Porta Nuova → Firenze S.M. Novella</strong></span><span class="commute-leg-meta">Coach 2, Seat 2 · Ticket LEYHQM</span></div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇮🇹 Florence → Cinque Terre</span>
+        <span class="commute-date">Tue 6 Oct 2026</span>
+        <span class="commute-total-time">⏱ 2h 25m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">12:28–13:28</span><span class="commute-leg-route"><span class="commute-leg-mode">Regionale 4029</span><strong>Firenze S.M. Novella → Pisa Centrale</strong></span><span class="commute-leg-meta">€9.30</span></div><div class="commute-leg"><span class="commute-leg-time">13:39–14:53</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 674</span><strong>Pisa Centrale → Monterosso</strong></span><span class="commute-leg-meta">€12.50</span></div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇮🇹 Cinque Terre → 🇫🇷 Nice</span>
+        <span class="commute-date">Fri 9 Oct 2026</span>
+        <span class="commute-total-time">⏱ 5h 39m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">10:33–12:07</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 666</span><strong>Monterosso → Genova Brignole</strong></span><span class="commute-leg-meta">PNR PK3L55 · €14.00</span></div><div class="commute-leg"><span class="commute-leg-time">12:40–12:46</span><span class="commute-leg-route"><span class="commute-leg-mode">Regionale 12370</span><strong>Genova Brignole → Genova Piazza Principe</strong></span><span class="commute-leg-meta">Booking PK7WF5</span></div><div class="commute-leg"><span class="commute-leg-time">12:58–14:54</span><span class="commute-leg-route"><span class="commute-leg-mode">IC 637</span><strong>Genova Piazza Principe → Ventimiglia</strong></span><span class="commute-leg-meta">Same booking · Seat 8D</span></div><div class="commute-leg"><span class="commute-leg-time">15:12–16:12</span><span class="commute-leg-route"><span class="commute-leg-mode">Zou! 86052</span><strong>Ventimiglia → Nice-Ville</strong></span><span class="commute-leg-meta">Booking SB1DGR</span></div></div>
+    </div>
+    <div class="commute-card is-booked">
+      <div class="commute-head">
+        <span class="commute-route">🇫🇷 Nice → 🇮🇪 Dublin</span>
+        <span class="commute-date">Tue 13 Oct 2026</span>
+        <span class="commute-total-time">⏱ 1h 40m</span>
+        <span class="commute-status status-booked">✓ Booked</span>
+      </div>
+      <div class="commute-body"><div class="commute-leg"><span class="commute-leg-time">10:45–12:25</span><span class="commute-leg-route"><span class="commute-leg-mode">FR 3955</span><strong>Nice (NCE) → Dublin (DUB)</strong></span><span class="commute-leg-meta">Ref L3BS2T · Ryanair · €46.11</span></div></div>
+    </div>
+
+</section>
+
+</main>
+
+<script>
+// ── NAV ──
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── ITINERARY FILTER ──
+function filterCity(city, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.day-card').forEach(card => {
+    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+  });
+}
+
+// ── BUDGET LOGIC ──
+function fmt(n) {
+  return '€' + Math.round(n).toLocaleString('en-IE');
+}
+
+const BUDGET_STORAGE_KEY = 'europe-trip-budget-v1';
+
+function recalcCity(input) {
+  const row = input.closest('tr');
+  const inputs = row.querySelectorAll('input.num-input');
+  const nights = parseFloat(inputs[0].value) || 0;
+  const airbnb = parseFloat(inputs[1].value) || 0;
+  const food   = parseFloat(inputs[2].value) || 0;
+  const acts   = parseFloat(inputs[3].value) || 0;
+  row.querySelector('.row-total').textContent = fmt(nights * (airbnb + food + acts));
+  recalcAllTotals();
+  saveBudget();
+}
+
+function recalcOneOff() {
+  let sum = 0;
+  document.querySelectorAll('#oneoff-tbody input.num-input').forEach(inp => {
+    sum += parseFloat(inp.value) || 0;
+  });
+  document.getElementById('oneoff-subtotal-table').textContent = fmt(sum);
+  document.getElementById('oneoff-subtotal-display').textContent = fmt(sum);
+  recalcAllTotals();
+  saveBudget();
+}
+
+function recalcAllTotals() {
+  let citySum = 0;
+  let accommodationSum = 0;
+  document.querySelectorAll('#city-tbody tr').forEach(row => {
+    const el = row.querySelector('.row-total');
+    citySum += parseFloat(el.textContent.replace(/[^0-9.-]/g, '')) || 0;
+    const inputs = row.querySelectorAll('input.num-input');
+    const nights = parseFloat(inputs[0]?.value) || 0;
+    const airbnb = parseFloat(inputs[1]?.value) || 0;
+    accommodationSum += nights * airbnb;
+  });
+  const oneoffSum = parseFloat((document.getElementById('oneoff-subtotal-table').textContent || '0').replace(/[^0-9.-]/g, '')) || 0;
+  const grand = citySum + oneoffSum;
+
+  let oneoffPaidSum = 0;
+  document.querySelectorAll('#oneoff-tbody tr').forEach(row => {
+    const checkbox = row.querySelector('.paid-checkbox');
+    if (checkbox && checkbox.checked) {
+      oneoffPaidSum += parseFloat(row.querySelector('input.num-input')?.value) || 0;
+    }
+  });
+  const prepaid = accommodationSum + oneoffPaidSum;
+  const remaining = grand - prepaid;
+
+  document.getElementById('city-subtotal-table').textContent = fmt(citySum);
+  document.getElementById('city-subtotal-display').textContent = fmt(citySum);
+  document.getElementById('grand-total-display').textContent = fmt(grand);
+  document.getElementById('prepaid-display').textContent = fmt(prepaid);
+  document.getElementById('remaining-display').textContent = fmt(remaining);
+}
+
+function togglePaid(checkbox) {
+  checkbox.closest('tr').classList.toggle('oneoff-row-paid', checkbox.checked);
+  recalcAllTotals();
+  saveBudget();
+}
+
+function addOneOffRow() {
+  const tbody = document.getElementById('oneoff-tbody');
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td><input class="text-input" type="text" value="New item"></td><td><input class="text-input notes-input" type="text" value="Notes"></td><td><input class="num-input" type="number" value="0" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td>`;
+  tbody.appendChild(tr);
+  recalcOneOff();
+  tr.querySelector('input').focus();
+  tr.querySelector('input').select();
+  saveBudget();
+}
+
+function deleteRow(btn) {
+  btn.closest('tr').remove();
+  recalcOneOff();
+  saveBudget();
+}
+
+// ── BUDGET PERSISTENCE (localStorage) ──
+function saveBudget() {
+  try {
+    const city = Array.from(document.querySelectorAll('#city-tbody tr')).map(row => {
+      const name = row.querySelector('td').textContent;
+      const inputs = row.querySelectorAll('input.num-input');
+      return { name, values: Array.from(inputs).map(i => i.value) };
+    });
+    const oneoff = Array.from(document.querySelectorAll('#oneoff-tbody tr')).map(row => {
+      const texts = row.querySelectorAll('input.text-input');
+      const num = row.querySelector('input.num-input');
+      const paid = row.querySelector('.paid-checkbox')?.checked ?? false;
+      return { item: texts[0]?.value ?? '', note: texts[1]?.value ?? '', cost: num?.value ?? '0', paid };
+    });
+    localStorage.setItem(BUDGET_STORAGE_KEY, JSON.stringify({ city, oneoff }));
+  } catch (e) {}
+}
+
+function loadBudget() {
+  let saved;
+  try {
+    saved = JSON.parse(localStorage.getItem(BUDGET_STORAGE_KEY) || 'null');
+  } catch (e) { saved = null; }
+  if (!saved) { recalcAllTotals(); return; }
+
+  // Restore city rows (matched by city name, so row order/count changes are safe)
+  if (Array.isArray(saved.city)) {
+    document.querySelectorAll('#city-tbody tr').forEach(row => {
+      const name = row.querySelector('td').textContent;
+      const savedRow = saved.city.find(c => c.name === name);
+      if (!savedRow) return;
+      const inputs = row.querySelectorAll('input.num-input');
+      savedRow.values.forEach((v, i) => { if (inputs[i]) inputs[i].value = v; });
+      const n = parseFloat(inputs[0]?.value) || 0;
+      const a = parseFloat(inputs[1]?.value) || 0;
+      const f = parseFloat(inputs[2]?.value) || 0;
+      const x = parseFloat(inputs[3]?.value) || 0;
+      row.querySelector('.row-total').textContent = fmt(n * (a + f + x));
+    });
+  }
+
+  // Restore one-off rows entirely (rebuild tbody so added/deleted rows persist too)
+  if (Array.isArray(saved.oneoff)) {
+    const tbody = document.getElementById('oneoff-tbody');
+    tbody.innerHTML = saved.oneoff.map(r => {
+      const checked = r.paid ? ' checked' : '';
+      const rowClass = r.paid ? ' class="oneoff-row-paid"' : '';
+      return `<tr${rowClass}><td><input class="text-input" type="text" value="${r.item.replace(/"/g, '&quot;')}"></td><td><input class="text-input notes-input" type="text" value="${r.note.replace(/"/g, '&quot;')}"></td><td><input class="num-input" type="number" value="${r.cost}" oninput="recalcOneOff()"></td><td style="text-align:center"><input type="checkbox" class="paid-checkbox" onchange="togglePaid(this)"${checked}></td><td><button class="delete-row-btn" onclick="deleteRow(this)">✕</button></td></tr>`;
+    }).join('');
+    document.getElementById('oneoff-subtotal-table').textContent =
+      fmt(saved.oneoff.reduce((s, r) => s + (parseFloat(r.cost) || 0), 0));
+    document.getElementById('oneoff-subtotal-display').textContent =
+      document.getElementById('oneoff-subtotal-table').textContent;
+  }
+
+  recalcAllTotals();
+}
+
+loadBudget();
+
+// Catch edits to item-name/notes text fields (they have no inline oninput handler)
+document.getElementById('budget').addEventListener('input', e => {
+  if (e.target.classList.contains('text-input')) saveBudget();
+});
+
+// ── DAY PHOTOS via Wikipedia REST API ──
+// Each entry maps to a Wikipedia article — the API returns the article's
+// lead image, works from any environment (CORS-enabled, no auth needed).
+const WIKI_ARTICLES = [
+  'Jordaan',                  // 1  Amsterdam arrival & canal walk
+  'Rijksmuseum',              // 2  Rijksmuseum + Albert Cuyp Market
+  'Vincent_van_Gogh',         // 3  Van Gogh
+  'Zaanse_Schans',            // 4  Windmill day trip
+  'Amsterdam',                // 5  EYE Film / Amsterdam city
+  'Haarlem',                  // 6  Haarlem arrival
+  'North_Sea',                // 7  North Sea beach
+  'Haarlem',                  // 8  Museums day
+  'Bruges',                   // 9  Bruges arrival
+  'Belfry_of_Bruges',         // 10 Bruges full day
+  'Lyon',                     // 11 Bruges to Lyon transit
+  'Lyon',                     // 12 Traboules & Beaux-Arts
+  'Basilica_of_Notre_Dame_de_Fourviere',// 13 Fourviere hill
+  'Beaujolais',               // 14 Beaujolais day trip
+  'Annecy',                   // 15 Lyon to Annecy transit
+  'Lake_Annecy',              // 16 Lake Annecy hike
+  'Lake_Annecy',              // 17 Angon Waterfall
+  'Interlaken',               // 18 Annecy to Interlaken transit
+  'Swiss_Alps',               // 19 Harder Kulm
+  'Bernese_Oberland',         // 20 Oeschinensee
+  'Switzerland',              // 21 Giessbach Falls
+  'Grindelwald',              // 22 Grindelwald arrival & Cliff Walk
+  'Jungfraujoch',             // 23 Top of Europe
+  'Swiss_Alps',               // 24 Mannlichen panoramic walk
+  'South_Tyrol',              // 25 Grindelwald to Bolzano transit
+  'Bolzano',                  // 26 Renon / Earth Pyramids
+  'Bolzano',                  // 27 Castel Roncolo
+  'Lake_Garda',               // 28 Bolzano to Riva del Garda transit
+  'Lake_Garda',               // 29 Punta Larici hike
+  'Limone_sul_Garda',         // 30 Strada del Ponale / ferry
+  'Verona_Arena',             // 31 Riva to Verona transit / Arena
+  'Verona',                   // 32 Verona old town
+  'Ponte_Vecchio',            // 33 Verona to Florence transit
+  'Uffizi_Gallery',           // 34 Uffizi & Duomo
+  'Lucca',                    // 35 Lucca day trip
+  'Cinque_Terre',             // 36 Florence to Cinque Terre transit
+  'Cinque_Terre',             // 37 Blue Trail
+  'Vernazza',                 // 38 Vernazza & Corniglia
+  'Nice',                     // 39 Cinque Terre to Nice transit
+  'Nice',                     // 40 Vieux Nice & Castle Hill
+  'Menton',                   // 41 Menton day trip
+  'Antibes',                  // 42 Cap d'Antibes
+  'Promenade_des_Anglais',    // 43 Departure
+];
+
+async function fetchWikiThumb(article) {
+  try {
+    const r = await fetch(
+      `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`,
+      { headers: { 'Accept': 'application/json' } }
+    );
+    if (!r.ok) return null;
+    const d = await r.json();
+    return d.thumbnail?.source || d.originalimage?.source || null;
+  } catch { return null; }
+}
+
+async function injectDayPhotos() {
+  const cards = document.querySelectorAll('#day-list .day-card');
+
+  // Create placeholder photo divs immediately so layout is set
+  cards.forEach((card, i) => {
+    if (i >= WIKI_ARTICLES.length) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'day-photo';
+    wrap.id = 'dp-' + i;
+    // spinner placeholder
+    wrap.style.cssText = 'display:flex;align-items:center;justify-content:center;background:#eee8df;';
+    wrap.innerHTML = '<span style="font-size:22px;opacity:0.35">📷</span>';
+    card.appendChild(wrap);
+  });
+
+  // Fetch images in batches of 5 to avoid overwhelming the API
+  for (let i = 0; i < WIKI_ARTICLES.length; i += 5) {
+    const batch = WIKI_ARTICLES.slice(i, i + 5).map((art, j) =>
+      fetchWikiThumb(art).then(url => ({ idx: i + j, url, art }))
+    );
+    const results = await Promise.all(batch);
+    results.forEach(({ idx, url, art }) => {
+      const wrap = document.getElementById('dp-' + idx);
+      if (!wrap) return;
+      if (url) {
+        wrap.style.cssText = '';
+        wrap.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = art.replace(/_/g, ' ');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.onerror = () => { wrap.style.display = 'none'; };
+        const credit = document.createElement('span');
+        credit.className = 'day-photo-credit';
+        credit.textContent = '© Wikipedia';
+        wrap.appendChild(img);
+        wrap.appendChild(credit);
+      } else {
+        wrap.style.display = 'none';
+      }
+    });
+  }
+}
+
+// Inject when itinerary tab is opened (lazy — only fires once)
+let _photosInjected = false;
+function maybeInjectPhotos() {
+  if (!_photosInjected) { _photosInjected = true; injectDayPhotos(); }
+}
+const _itinBtn = document.querySelector('.nav-btn[onclick*="itinerary"]');
+if (_itinBtn) _itinBtn.addEventListener('click', maybeInjectPhotos);
+if (document.getElementById('itinerary')?.classList.contains('active')) maybeInjectPhotos();
+</script>
+</body>
+</html>
